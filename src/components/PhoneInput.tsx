@@ -30,7 +30,7 @@ export function PhoneInput({
           <option value="1">🇺🇸 +1</option>
         </select>
         <input
-          className="field"
+          className="field min-w-0 flex-1"
           inputMode="tel"
           autoComplete="tel-national"
           placeholder="10 dígitos"
