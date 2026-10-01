@@ -42,30 +42,32 @@ input, select, textarea {
   font: inherit;
 }
 
-.field {
-  width: 100%;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  border-radius: 12px;
-  padding: 0.7rem 0.85rem;
-  font-size: 1rem;
-  transition: border-color 0.15s, box-shadow 0.15s;
-}
-.field:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-ring); }
+@layer components {
+  .field {
+    width: 100%;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 0.7rem 0.85rem;
+    font-size: 1rem;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .field:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-ring); }
 
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-  border-radius: 12px; padding: 0.75rem 1.1rem; font-weight: 600; font-size: 0.95rem;
-  transition: filter 0.15s, transform 0.05s, background 0.15s;
-  cursor: pointer; user-select: none;
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    border-radius: 12px; padding: 0.75rem 1.1rem; font-weight: 600; font-size: 0.95rem;
+    transition: filter 0.15s, transform 0.05s, background 0.15s;
+    cursor: pointer; user-select: none;
+  }
+  .btn:active { transform: scale(0.98); }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .btn-brand { background: var(--brand); color: var(--brand-fg); }
+  .btn-brand:hover:not(:disabled) { filter: brightness(0.94); }
+  .btn-ghost { background: var(--surface); border: 1px solid var(--line); color: var(--ink); }
+  .btn-ghost:hover:not(:disabled) { background: #f9fafb; }
+  .btn-danger { color: var(--danger); }
 }
-.btn:active { transform: scale(0.98); }
-.btn:disabled { opacity: 0.5; cursor: not-allowed; }
-.btn-brand { background: var(--brand); color: var(--brand-fg); }
-.btn-brand:hover:not(:disabled) { filter: brightness(0.94); }
-.btn-ghost { background: var(--surface); border: 1px solid var(--line); color: var(--ink); }
-.btn-ghost:hover:not(:disabled) { background: #f9fafb; }
-.btn-danger { color: var(--danger); }
 
 .stamp-pop { animation: stamp 0.45s cubic-bezier(.2,1.6,.4,1) both; }
 @keyframes stamp {
