@@ -14,3 +14,13 @@ export function errorCode(err: { message?: string } | null | undefined): string 
   return "UNKNOWN";
 }
 export const CARD_COOKIE = "perkly_card";
+
+/** Número de WhatsApp de ventas (solo dígitos, con lada; ej. 528781234567). */
+export const SALES_WHATSAPP = (process.env.NEXT_PUBLIC_SALES_WHATSAPP || "").replace(/\D/g, "");
+
+export const SALES_MESSAGE =
+  "Hola, quiero el programa de recompensas Perkly para mi negocio.\n\nNombre del negocio: \nGiro (restaurante, café, tienda...): \nCiudad: ";
+
+export function salesWhatsAppUrl(text = SALES_MESSAGE) {
+  return `https://wa.me/${SALES_WHATSAPP}?text=${encodeURIComponent(text)}`;
+}

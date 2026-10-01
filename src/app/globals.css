@@ -26,6 +26,7 @@
   --color-brand-fg: var(--brand-fg);
   --color-brand-soft: var(--brand-soft);
   --font-sans: "Onest", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Bricolage Grotesque", "Onest", ui-sans-serif, system-ui, sans-serif;
 }
 
 html { -webkit-text-size-adjust: 100%; }
